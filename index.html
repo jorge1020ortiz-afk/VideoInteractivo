@@ -1,0 +1,66 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Car Journey</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Fade effect imágenes */
+    #screen {
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+    #screen.visible {
+      opacity: 1;
+    }
+
+    /* Animación mensaje final */
+    .final-message {
+      position: absolute;
+      bottom: 10%;
+      width: 100%;
+      text-align: center;
+      font-size: clamp(20px, 3vw, 36px);
+      font-weight: bold;
+      color: white;
+      opacity: 0;
+      transform: scale(0.95);
+      animation: fadeZoom 1.5s ease forwards;
+    }
+
+    /* Contador visual */
+    .countdown {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
+      background: rgba(0,0,0,0.5);
+      padding: 6px 10px;
+      border-radius: 12px;
+    }
+
+    @keyframes fadeZoom {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgm" src="assets/audio/music.mp3" loop></audio>
+
+  <div id="app" class="app">
+    <img id="screen" alt="screen" />
+    <div id="buttons" class="buttons"></div>
+    <div id="finalText" class="final-message" style="display:none;"></div>
+    <div id="countdown" class="countdown" style="display:none;">2:00</div>
+    <button id="soundToggle" class="sound" title="Mute/Unmute">🔈</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

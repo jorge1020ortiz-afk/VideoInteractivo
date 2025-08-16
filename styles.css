@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  background: #111;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+}
+.app {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+#screen {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.5);
+  background: #000;
+}
+.buttons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4%;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 24px;
+}
+.buttons button {
+  border: none;
+  border-radius: 18px;
+  padding: 14px 20px;
+  font-weight: 800;
+  font-size: clamp(14px, 2.2vw, 22px);
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,.3);
+  transition: transform .1s, opacity .2s;
+  background: #ff3b30;
+  color: #fff;
+}
+.buttons button:nth-child(odd) {
+  background: #ff6a00;
+}
+.buttons button:hover {
+  transform: translateY(-2px);
+}
+.sound {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 12px;
+  font-size: 18px;
+  cursor: pointer;
+  background: #ffffffd9;
+}
+@media (max-width: 700px) {
+  .buttons {
+    bottom: 2%;
+    gap: 10px;
+  }
+  .buttons button {
+    padding: 12px 14px;
+  }
+}
